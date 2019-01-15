@@ -8,8 +8,7 @@
 ### Links and Resources
 * [repo](http://xyz.com)
 * [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [front-end](https://dashboard.heroku.com/apps/lab-16-diquattro)
 
 #### Documentation
 * [swagger](http://xyz.com) (API assignments only)
@@ -27,14 +26,14 @@ Usage Notes or examples
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` - 3000
+* `MONGODB_URI` - Not sure how to do this yet.
 
 #### Running the app
 * `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
+* Endpoint: `index.js`
+  * Starts the server for the app.
+* Endpoint: ``
   * Returns a JSON object with xyz in it.
   
 #### Tests
