@@ -1,6 +1,9 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 const users = new mongoose.Schema({
   username: {type: String, required: true, unique: true},
@@ -21,13 +24,23 @@ users.pre('save', function(next) {
 users.statics.authenticateBasic = function(auth) {
   let query = {username:auth.username};
   return this.findOne(query)
-    .then(user => user && user.comparePassword(auth.password))
+    .then(user => {
+
+      if(user && user.comparePassword(auth.password)){
+
+        return user;
+      }
+
+    })
     .catch(console.error);
 };
 
 // Compare a plain text password against the hashed one we have saved
 users.methods.comparePassword = function(password) {
-  return bcrypt.compare(password, this.password);
+  return bcrypt.compare(password, this.password)
+
+    .then(valid => valid ? this : null);
+    
 };
 
 // Generate a JWT from the user id and a secret

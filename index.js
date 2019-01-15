@@ -10,5 +10,5 @@ const options = {
 };
 mongoose.connect(process.env.MONGODB_URI, options);
 
-// Start the web server
-require('./src/app.js').start(process.env.PORT);
+
+require('./auth-server/src/app').start(process.env.PORT);
