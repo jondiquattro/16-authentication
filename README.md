@@ -7,7 +7,7 @@
 
 ### Links and Resources
 * [repo](http://xyz.com)
-* [travis](http://xyz.com)
+* [travis](https://www.travis-ci.com/jondiquattro/16-authentication)
 * [front-end](https://dashboard.heroku.com/apps/lab-16-diquattro)
 
 #### Documentation
@@ -30,16 +30,16 @@ Usage Notes or examples
 * `MONGODB_URI` - Not sure how to do this yet.
 
 #### Running the app
-* `npm start`
+* `npm start or nodemon`
 * Endpoint: `index.js`
   * Starts the server for the app.
-* Endpoint: ``
-  * Returns a JSON object with xyz in it.
+* Endpoint: `echo in a username and password EXAMPLE echo '{"username":"joh", "password":"johnny"}' | http post :3000/signup`  
+* Endpoint: `echo in a registered username and password EXAMPLE http post :3000/signin -a john:johnny`
+  * Returns: `http should return a token for each command, and nodmon should accept user`
   
 #### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+* Run test using the comman npm text
+
 
 #### UML
-Link to an image of the UML for your application and response to events
+https://photos.app.goo.gl/XdU18QfDtkLTv5838
